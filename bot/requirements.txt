@@ -1,0 +1,5 @@
+aiogram==3.0.0b3
+redis
+aioredis==2.0.1
+python-dotenv==0.20.0
+aioschedule==0.5.2

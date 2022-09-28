@@ -1,0 +1,44 @@
+version: '3.3'
+services:
+  db:
+    image: postgres:14.0-alpine
+    volumes:
+      - ./postgres:/var/lib/postgresql/data/
+    env_file:
+      - ./backend/.env
+  redis:
+    image: redis:7.0-alpine
+    ports:
+      - "6379:6379"
+    hostname: redis
+    volumes:
+      - ./redis/config:/usr/local/etc/redis
+      - ./redis/data:/data
+    command: "redis-server /usr/local/etc/redis/redis.conf"
+  web:
+    build: ./backend/
+    restart: always
+    ports:
+    - "8000:8000"
+    volumes:
+      - ./django_files/static:/app/static/
+      - ./django_files/media:/app/media/
+    depends_on:
+      - db
+      - redis
+    env_file:
+      - ./backend/.env
+  tgbot:
+    build: ./bot
+    restart: always
+    ports:
+      - "7771:7771"
+    depends_on:
+      - web
+    env_file:
+      - ./bot/.env
+
+volumes:
+  static:
+  media:
+  postgres_db:
