@@ -32,8 +32,7 @@ https://core.telegram.org/bots/webhooks).
 - База для хранения данных django - postgresql, для хранения состояний 
   aiogram - redis
 - Администрирование через telegram или админку django
-- примерная логика работы бота и схема БД тут (xmind): https://disk.yandex.
-  ru/d/f0JdQp4kFanXIQ
+- примерная логика работы бота и схема БД тут (xmind): https://disk.yandex.ru/d/f0JdQp4kFanXIQ
 
 ### Администрирование
 - Добавление блюд (Название, описание, фото/без фото)
