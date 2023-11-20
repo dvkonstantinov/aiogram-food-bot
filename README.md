@@ -167,6 +167,8 @@ sudo docker-compose exec backend python manage.py createsuperuser
 sudo docker-compose exec backend python manage.py collectstatic
 ```
 ## Разворачивние на локальной машине, режим разработки и другое
+## Внимание:
+Нижеприведенная инструкция написана не совсем корректно, как и, возможно, вышеприведенная. Когда-нибудь я ее перепишу, а пока записал видос с запуском на локалке в винде. https://www.youtube.com/watch?v=SzVwEmaOzYA
 ### Запуск в режиме polling
 в файле ./bot/.env переменную IS_WEBHOOK заменить на False или 0
 ```sh
